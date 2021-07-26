@@ -1,0 +1,19 @@
+{
+  "error": {
+    "not_found": "{{variable, uppercase}} not found"
+  },
+  "variable": {
+    "user": "user"
+  },
+  "PAGE_NOT_FOUND": "Page Not Found",
+  "SYSTEM_MAINTENANCE": "System Maintenance",
+  "SOMETHING_WRONG": "Upss Something Wrong Happen",
+
+  "REQUIRED": "Required",
+  "MUST_BE_STRING": "Must Be String",
+  "MUST_BE_INTEGER": "Must Be Integer",
+  "MUST_BE_BOOLEAN": "Must Be Boolean",
+  "MUST_BE_EMAIL": "Must Be Email",
+  "MUST_BE_ENUM": "Must Be Enum",
+  "ALREADY_IN_USE": "Already In Use"
+}

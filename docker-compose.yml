@@ -1,0 +1,64 @@
+version: '3.7'
+
+networks:
+ lininet:
+  external:
+   name: lini-net
+
+services:
+ api:
+  #image: linipay-dev
+  build: ./dist/
+  container_name: linipay-api
+  environment:
+    - NODE_ENV=production
+    - PORT=15555
+    - API_VERSION=1.0
+    - JWT_SECRET=helloworld
+    - UNIQUE_NAME_PG_DB=linipay
+    - UNIQUE_NAME_PG_TEST_DB=linipay_test
+    - UNIQUE_NAME_PG_PORT=5432
+    - UNIQUE_NAME_PG_HOST=10.250.1.147
+    - UNIQUE_NAME_PG_USER=postgres
+    - UNIQUE_NAME_PG_PASSWD=codify#2019
+    - UNIQUE_NAME_PG_SSL=false
+    - UNIQUE_NAME_PG_CERT_CA='somethingHere'
+
+    - FLUENTD_URL=http://10.250.1.77
+    - FLUENTD_PORT=8888
+    - FLUENTD_DB=mongo.linipay_prod
+
+    - SENTRY_URL=https://4798cc947d434af382ab5fe0904578c4@sentry.macroad.co.id/24
+    - SENTRY_ENVIRONMENT=production
+
+    - BUCKET_PATH=https://minio-api.macroad.co.id
+    - BUCKET_SECRET=c033af86d0aaefa52a67fff6383234ff53028ae3
+    - ASSETS_ORIGINAL_PATH=./server/resources/static/assets/uploads/original
+    - ASSETS_THUMBS_PATH=./server/resources/static/assets/uploads/thumbs
+
+    - CHIPER_SECRET_KEY=linipay2020
+
+    - KASPRO_URL=https://api.kaspro.id/M4hFeeJqyh
+    - KASPRO_URL_DEV=http://dev.kaspro.id/api
+    - KASPRO_URL_PROD=https://api.kaspro.id/M4hFeeJqyh
+
+    - KASPRO_ACCOUNT_NUMBER=924213492612
+    - KASPRO_ACCOUNT_NUMBER_DEV=347712372921
+    - KASPRO_ACCOUNT_NUMBER_PROD=924213492612
+
+    - KASPRO_PARTNER_PHONE=081297184989
+
+    - KASPRO_TOKEN=8dXNv+8R5tlvkwFx9XEY22YVBNYZ4W6jWn9uH1Gc/2FZZKUmYFOsyZhVZQ8KArVyLM+oBIkKSDP/eXW2DCb1x8uiCml8KfaPFrNuFxefbSfMonkqwC3fMCHDvVzBqSyIbZjkSdK/681WpQ62+AetBB00Z8tpplT4mByIVqwdSl4k7/9rlvWiCi/aDWMz8E2j1GkkSDpGCsvpqH812l4Zy4IdG9QgqNgLvjw2gMg4KGw=
+    - KASPRO_TOKEN_DEV=WLu28cXFYvrdtQ7KFNxDUI3hpufmj+EbNknAEL9i7pfdjx69s/lnu3YSScaxUv+7Iere9Or5f1AvNC3rO8l+U3gkcU87vUrlHu6llGJeZiolpM2mD1ZePTlPyjVrArkmlK5Ui8vnGmu55anh2jq2Y4KD9HIj2FI8ENzfFqPX3/vmVH2e8ImkxsDuK1Ot+oH6BVxUKThhqcVPFfv3Qe52AA==
+    - KASPRO_TOKEN_PROD=8dXNv+8R5tlvkwFx9XEY22YVBNYZ4W6jWn9uH1Gc/2FZZKUmYFOsyZhVZQ8KArVyLM+oBIkKSDP/eXW2DCb1x8uiCml8KfaPFrNuFxefbSfMonkqwC3fMCHDvVzBqSyIbZjkSdK/681WpQ62+AetBB00Z8tpplT4mByIVqwdSl4k7/9rlvWiCi/aDWMz8E2j1GkkSDpGCsvpqH812l4Zy4IdG9QgqNgLvjw2gMg4KGw=
+    
+    - SYSTEM_ENV=production
+
+    - MONGODB_URL=mongodb://10.250.1.77:27017/linipay_prod
+    - MONGODB_PORT=27017
+
+    - CERT_PATH=./server/cert
+
+  networks:
+   - lininet
+  restart: unless-stopped

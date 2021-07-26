@@ -1,0 +1,19 @@
+{
+  "error": {
+    "not_found": "{{variable, uppercase}} tidak ditemukan"
+  },
+  "variable": {
+    "user": "pengguna"
+  },
+  "PAGE_NOT_FOUND": "Halaman Tidak Ditemukan",
+  "SYSTEM_MAINTENANCE": "Sistem dalam pemeliharaan",
+  "SOMETHING_WRONG": "Upss terjadi kesalahan",
+
+  "REQUIRED": "Dibutuhkan",
+  "MUST_BE_STRING": "Harus dalam bentuk String",
+  "MUST_BE_INTEGER": "Harus dalam bentuk Integer",
+  "MUST_BE_BOOLEAN": "Harus dalam bentuk Boolean",
+  "MUST_BE_EMAIL": "Harus dalam bentuk Email",
+  "MUST_BE_ENUM": "Harus dalam bentuk Enum",
+  "ALREADY_IN_USE": "Sudah Digunakan"
+}

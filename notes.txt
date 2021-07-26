@@ -1,0 +1,7 @@
+./node_modules/.bin/sequelize db:migrate (For migrate (make tabel from migrate))
+./node_modules/.bin/sequelize db:create (For create (make database))
+./node_modules/.bin/sequelize db:drop (For drop (drop table))
+
+localhost:4005/api/v1.0/ (To access API, make sure the correct port is used)
+
+auth.route.js
